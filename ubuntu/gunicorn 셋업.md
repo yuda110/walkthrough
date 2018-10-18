@@ -38,7 +38,7 @@
         $ gunicorn {project_name}.wsgi --bind=localhost:8001 --daemon
         
 
-##추가 팁
+## 추가 팁
 - 안 되면 gunicorn 실행되고 있는지 확인
 
         $ ps -A

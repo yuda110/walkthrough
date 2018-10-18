@@ -1,4 +1,4 @@
-#celery beat 셋업
+# celery beat 셋업
 
 ### django settings.py 수정
 - **Celery Timezone** 추가(혹은 `celery.py` 에 추가해도 됨)

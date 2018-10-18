@@ -1,4 +1,5 @@
-#branch
+
+# branch
 
 
 * branch 존재 이유를 파악하고 쓰자. 
@@ -19,13 +20,13 @@
     $ git branch -v -a
 
 
-###원격저장소 branch 가져올 때
+### 원격저장소 branch 가져올 때
 
     $ git checkout -b 생성할브랜치이름 원격브랜치이름
     (ex. git checkout -b test origin/test)
 
 
-###다른 branch에서 특정 파일만 pull하고 싶을 때
+### 다른 branch에서 특정 파일만 pull하고 싶을 때
 
     $ git checkout test
     $ git checkout --patch sass index.html
@@ -35,7 +36,7 @@
     $ git checkout sass index.html
     
 
-###branch 삭제
+### branch 삭제
 
 > 일단 fetch
 

@@ -21,6 +21,14 @@
 ### init 파일 내용 작성
 
         #!/bin/bash
+        ### BEGIN INIT INFO
+        # Provides:             flower
+        # Required-Start:       $network $local_fs $remote_fs
+        # Required-Stop:        $network $local_fs $remote_fs
+        # Default-Start:        2 3 4 5
+        # Default-Stop:         0 1 6
+        # Short-Description:    celery flower daemon
+        ### END INIT INFO
         
         NAME=flower
         DESC="flower daemon"

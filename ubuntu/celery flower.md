@@ -1,16 +1,11 @@
 # celery flower
 
 - flower는 celery를 웹에서 모니터링할 수 있게 해주는 툴이다.
-- flower를 이용하기 위해서는 RabbitMQ라는 메시지 브로커 소프트웨어(오픈소스)가 있어야 한다. 
 
-
-### rabbitmq-server 설치
-    $ sudo apt-get install rabbitmq-server
+    
     
 ### flower 설치
     $ pip install flower
-    
-* 혹 virtual envrionment를 사용한다면 virtual env 아래에 받도록 한다.
     
 ### init.d에 flower.sh 혹은 flower 생성
 

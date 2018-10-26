@@ -16,6 +16,15 @@
                 'args': ()
             },
         }
+        
+## ubuntu 설정
+
+- /etc/init.d/celerybeat 파일을 생성하고, 내용은 [celery github](https://github.com/celery/celery/blob/master/extra/generic-init.d/celerybeat)에서 복붙하자.
+
+
+    $ sudo touch /etc/init.d/celerybeat
+
+
 
 ### ubuntu에서 celery 실행
 - venv 실행

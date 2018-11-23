@@ -26,15 +26,14 @@
 ![Alt SES 1](/images/ses1_1.png)
 4) 아래의 파일을 적당히 수정하여 `customverificationemail.json`으로 저장한 뒤, 
 
-
-    {
-      "TemplateName": "SampleTemplate",
-      "FromEmailAddress": "sender@example.com",
-      "TemplateSubject": "Please confirm your email address",
-      "TemplateContent": "Sample Content",
-      "SuccessRedirectionURL": "https://www.example.com/verifysuccess",
-      "FailureRedirectionURL": "https://www.example.com/verifyfailure"
-    }
+        {
+          "TemplateName": "SampleTemplate",
+          "FromEmailAddress": "sender@example.com",
+          "TemplateSubject": "Please confirm your email address",
+          "TemplateContent": "Sample Content",
+          "SuccessRedirectionURL": "https://www.example.com/verifysuccess",
+          "FailureRedirectionURL": "https://www.example.com/verifyfailure"
+        }
 
 다음 명령어로 템플릿을 생성한다.(**file://** 반드시 들어가야 함)
 

@@ -11,8 +11,21 @@ godaddy에서 dns관리에서 유형 A (Alias)의 값을 Redirection Server의 i
 
 > 유형 CNAME 이름 ftp 값 @
 
+### apache
 
-### ubuntu
+    $ sudo add-apt-repository ppa:certbot/certbot
+    $ sudo apt-get update
+    $ sudo apt-get install python-certbot-apache
+    
+    $ sudo certbot --apache -d example.com
+    $ sudo certbot --apache -d example.com -d www.example.com
+    
+    >> https://www.ssllabs.com/ssltest/analyze.html?d=example.com&latest
+    
+    $ sudo certbot renew --dry-run
+
+
+### nginx
 
     $ sudo certbot --nginx -d example.com
 

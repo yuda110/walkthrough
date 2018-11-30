@@ -60,3 +60,45 @@
 ## Systems Manager
 - 이전에는 SSH Client, SSH Port(22) Open, Key Pair 등이 필요했으나 Session Manager를 이용하면 이것들이 필요 없다.
 - Session Manager 서비스에 들어가서 왼쪽의 `세션 관리자`를 누르고 인스턴스를 추가한다.
+
+
+        # First Page
+        $ df -h                                     # 현재 마운트된 목록 나열
+        $ cd ~                                      # 홈 디렉토리로 이동
+        $ pwd                                       # 현재 디렉토리 확인
+        $ wget http://bit.ly/AWS101_HOL_Script1     # 스크립트 다운로드
+
+        # Second Page
+        $ sh ./AWS101_HOL_Script1                   # 스크립트 실행
+        $ sudo mount -a                             # /etc/fstab 내용 적용 및 이상 여부 확인
+        $ df -h                                     # 현재 마운트된 목록 나열
+
+        # Third Page
+        $ wget http://bit.ly/AWS101_HOL_Script2
+        $ sh ./AWS101_HOL_Script2
+        $ ls -al /mount_1g/
+
+
+## AMI(Amazon Machine Image)
+1. EC2를 중지한 뒤, 이미지를 생성한다.(AMI)
+2. AMI를 시작하여 첫 번째 EC2를 생성했을 때와 똑같이, 하지만 서브넷이나 이름 등은 2 로 하도록 한다.
+3. 그리고 elastic IP를 이 인스턴스에 재연결한다.(연결 시 재연결 체크박스 체크) elastic IP가 작동하는지 확인한다.
+
+## ELB(Elastic Load Balancing)
+- ELB는 들어오는 애플리케이션 트래픽을 EC2, 컨테이너, IP 주소와 같은 여러 대상에 자동으로 분산시킨다. 즉 다양한 애플리케이션 부하를 처리할 수 있다.
+
+
+1. 멈춰있던 인스턴스를 다시 실행하고 왼쪽의 탭에서 `로드 밸런싱 > 로드밸런서`로 가서 로드밸런서를 생성한다.
+2. 첫 번째 `Application Load Balancer`를 선택한 뒤, 이름 짓고, IPv4, 만들어 둔 VPC, 서브넷 둘, 태그는 Name:WebServerLB 로 설정한다.
+3. 보안그룹은 만들어 두었던 걸 사용한다.
+4. 라우팅은 새 대상 그룹을 생성한다. 고급 상태검사 설정에서는 정상임계값:2, 비정상임계값:5, 제한시간:4, 간격:5로 수정한다.
+5. 인스턴스 두 개를 등록하고 로드밸런서 등록을 마친다.
+6. 로드밸런서 상태가 'active'로 변경되면 해당 DNS 주소로 접속하고, 두 인스턴스가 번갈아 나오는지 확인한다.
+
+## 마무리
+1. ELB (삭제)
+2. Elastic IP (주소 연결 해제 후, 주소 릴리스)
+3. EC2 인스턴스 (종료)
+4. 커스텀 AMI (등록취소)
+5. EBS 볼륨 (볼륨 삭제)
+6. VPC (삭제) **– 주의: Defualt VPC 삭제 금지**

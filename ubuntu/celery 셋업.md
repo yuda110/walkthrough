@@ -59,10 +59,11 @@ celery를 daemon으로 돌리고 싶다면, 이 [블로그](https://pythad.githu
     $ ps aux|grep 'celery beat'     // celery beat의 경우
 
     
-## 버그 리포트
-- 만약 다음과 같은 에러가 발생한다면,
+## 에러 핸들링
+### KeyError async
+
 > AttributeError async
 
 > KeyError async
 
-kombu와 celery의 버전이 충돌하는 것이니, celery 버전을 4.2.1로 받아준다. [celery github에 올라온 이슈](https://github.com/celery/kombu/issues/870)
+ [celery github에 올라온 이슈](https://github.com/celery/kombu/issues/870)kombu와 celery의 버전이 충돌하는 것이니, celery 버전을 4.2.1로 받아준다.

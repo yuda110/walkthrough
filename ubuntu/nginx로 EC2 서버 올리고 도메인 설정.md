@@ -52,4 +52,5 @@
         
     > No names were found in your configuration files. Please enter in your domain
     name(s) (comma and/or space separated)  (Enter 'c' to cancel): 이런 게 뜨면, 도메인 입력(ex. mysite.com)
+    
     > Redirect 할거냐 말거냐 물어보면 '한다' 선택

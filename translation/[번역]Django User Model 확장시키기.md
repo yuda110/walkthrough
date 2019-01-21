@@ -64,29 +64,30 @@ Proxy Model은 데이터베이스에 새로운 테이블을 생성할 필요가 
 이는 AbstractBaseUser와 달리, 당신이 Django 인증 프로세스를 그대로 받아들이고 싶을 때,
 그리고 이와 동시에 추가적인 클래스 생성 없이 기존 User Model에 추가 정보를 저장하고 싶을 때 사용합니다.(**Option 2**처럼 말이죠.)
 
- 이 경우, [다음 지시]()를 따릅니다.
+이 경우, [다음 지시]()를 따릅니다.
  
- ---
+---
  
- ### Proxy Model을 사용하여 User Model 확장하기<a name="option1"></a>
- 이는 User Model을 간단하게 확장하는 방법입니다.
- 아무런 문제도 일어나지 않을 테지만, 매우 한정적이죠.
+### Proxy Model을 사용하여 User Model 확장하기<a name="option1"></a>
+이는 User Model을 간단하게 확장하는 방법입니다.
+아무런 문제도 일어나지 않을 테지만, 매우 한정적이죠.
  
+
     from django.contrib.auth.models import User
     from .managers import PersonManager
     
     class Person(User):
-        objects = PersonManager()
+       objects = PersonManager()
     
-        class Meta:
-            proxy = Trueㄱ
-            ordering = ('first_name', )
+       class Meta:
+           proxy = True
+           ordering = ('first_name', )
     
-        def do_something(self):
-            ...
+       def do_something(self):
+           ...
             
 위의 예시에서는 `Person`이라는 Proxy Model을 정의합니다.
-Meta 클래스 내에서 `proxy = True`를 적어 Django에게 이 모델이 Proxy Model이라고 알려주었습니다.
+Meta 클래스 내에서 `proxy = True`를 적어 Django에게 이 모델이 Proxy Model이라고 알려줍니다.
 
 이 경우 우리는 기본 정렬을 재정의할 수 있고, 모델에 커스텀 `Manager`를 할당할 수 있습니다. 
 또 `do_something`과 같은 새로운 메소드도 정의할 수 있습니다.

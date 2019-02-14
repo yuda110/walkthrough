@@ -1,17 +1,18 @@
+
 class Person:
-    def __init__(self, firstName, lastName, idNumber):
-        self.firstName = firstName
-        self.lastName = lastName
-        self.idNumber = idNumber
+    def __init__(self, first_name, last_name, id_number):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.id_number = id_number
 
     def print_person(self):
-        print("Name:", self.lastName + ",", self.firstName)
-        print("ID:", self.idNumber)
+        print("Name:", self.last_name + ",", self.first_name)
+        print("ID:", self.id_number)
 
 
 class Student(Person):
-    def __init__(self, firstName, lastName, idNumber, score):
-        super().__init__(firstName, lastName, idNumber)
+    def __init__(self, first_name, last_name, id_number, score):
+        super().__init__(first_name, last_name, id_number)
         self.score = score
 
     def calculate(self):
@@ -30,6 +31,7 @@ class Student(Person):
             grade = 'T'
         return grade
 
+
 s = Student('Dahyun', 'Yu', 8135627, [100, 80])
-s.printPerson()
+s.print_person()
 print("Grade:", s.calculate())

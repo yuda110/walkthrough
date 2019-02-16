@@ -12,3 +12,6 @@
 
         http://project-name:8090/index.html
         
+
+- html 문서 디렉토리가 `html/index.html` 이런 식이라면, html 폴더를 Resource Root로 변경
+        

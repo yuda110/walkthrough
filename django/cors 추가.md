@@ -22,3 +22,7 @@
             ...
             'corsheaders',    # 'django-cors-headers' package
         )
+        
+- settings.py에 다음 속성 추가
+
+      CORS_ORIGIN_ALLOW_ALL = True

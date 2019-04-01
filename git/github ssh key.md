@@ -10,5 +10,5 @@
     $ eval “$(ssh-agent -s)”
     $ ssh-add ~/.ssh/id_rsa
 
-### github 설정 페이지 가서(내 프로필 설정 혹은 해당 프로젝트 페이지) SSH key 추가
-    $ git clone git@github.com:[아이디 혹은 그룹]/[프로젝트명].git
+### .ssh/id_rsa.pub 내용 복사 후, `github Settings > SSH and GPG keys`에 추가
+    

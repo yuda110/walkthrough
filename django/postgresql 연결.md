@@ -13,7 +13,7 @@ DATABASE 세팅
 ```python
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'my_database',
         'USER': 'my_name',
         'PASSWORD': '1234567890',
@@ -22,8 +22,9 @@ DATABASES = {
 }
 ```
 
-OperationalError
-> 윈도우에서는 psycopg2 가 안 돌아감! 이건 리눅스 환경에서만 동작한다.
+### OperationalError
+윈도우에서는 psycopg2 가 안 돌아감! 이건 리눅스 환경에서만 동작한다.
 따라서 psycopg2-binary 모듈을 받아야 한다.
 
-> USER에게 권한 주면 됨(pgadmin에서 유저 속성에서 Privileges 수정)
+### 뭔가가 안 되는 것 같을 땐
+USER에게 권한 주면 됨(pgadmin에서 유저 속성에서 Privileges 수정)

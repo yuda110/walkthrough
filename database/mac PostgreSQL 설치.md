@@ -1,4 +1,4 @@
-mac에서 postgresql 설치
+mac에서 PostgreSQL 설치
 --
 
 1. PostgreSQL 설치
